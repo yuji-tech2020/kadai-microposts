@@ -29,6 +29,7 @@ class MicropostsController < ApplicationController
     
     if @micropost.update(micropost_params)
       flash[:success] = '投稿は正常に更新されました'
+      redirect_to @micropost
     else
       flash.now[:danger] = '投稿は正常に更新されませんでした'
       render :edit
